@@ -10,7 +10,7 @@ module tb ();
    logic        clk;   
    
   // instantiate device under test
-   silly dut (a[3:0], b[3:0], c, sum[3:0], cout);
+   RCA dut (a[3:0], b[3:0], c, sum[3:0], cout);
  ////////////////////////////////////////////////////////////////////
    // 20 ns clock
    initial 
