@@ -40,20 +40,24 @@ module top_demo
   output logic [3:0] sseg_an
 );
 
+    logic [3:0] sum;
+    logic cout;
+
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
   
-  // Place TicTacToe instantiation here
-  
+  // Place RCA instantiation here
+   RCA dut ( sw[3:0], sw[7:4], btn[0],sum, cout);
+
   // 7-segment display
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
   .digit0(sw[3:0]),
-  .digit1(4'b0111),
-  .digit2(sw[7:4]),
-  .digit3(4'b1111),
+  .digit1(sw[7:4]),
+  .digit2(sum),
+  .digit3(cout),
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
