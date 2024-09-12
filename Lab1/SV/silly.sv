@@ -1,4 +1,4 @@
-module silly(input logic [3:0] a, b, logic c, output logic [3:0] sum, logic cout);
+module RCA(input logic [3:0] a, b, logic c, output logic [3:0] sum, logic cout);
   logic c1, c2, c3;
   
    fa rc1( a[0], b[0], c, sum[0], c1);
